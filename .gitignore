@@ -1,0 +1,4 @@
+# Archivos de configuración de VSCode / Code OSS
+.vscode/
+
+build/
