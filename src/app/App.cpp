@@ -85,11 +85,11 @@ void App::validateInput() {
         std::string relaxTime = std::string("5");
         std::cout << "\n▣ Pomodoro Started ▣" << std::endl;
         timer.startTimer(time);
-        playSound("../assets/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/sound.wav", 3);
 
         std::cout << "\n▣ Relax Time Started ▣" << std::endl;
         timer.startTimer(relaxTime);
-        playSound("../assets/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/sound.wav", 3);
     }
 
     if (input == "4" || input == "configure" || input == "configure pomodoro"){
@@ -107,10 +107,10 @@ void App::validateInput() {
         Timer relaxTimer;
         std::cout << "\n▣ Pomodoro Started ▣" << std::endl;
         timer.startTimer(confTime);
-        playSound("../assets/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/sound.wav", 3);
         std::cout << "\n▣ Relax Time Started ▣" << std::endl;
         relaxTimer.startTimer(relaxTime);
-        playSound("../assets/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/sound.wav", 3);
     }
 
     if (input == "5" || input == "delete" || input == "delete task") {
