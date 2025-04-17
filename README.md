@@ -7,3 +7,5 @@ A simple terminal program for managing your tasks. It includes CRUD functionalit
 ![image](https://github.com/user-attachments/assets/dbade5d2-ab73-4ba9-8d84-50486cf39a5b)
 
 ***prerequisites***
+
+- 
