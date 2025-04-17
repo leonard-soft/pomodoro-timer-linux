@@ -85,11 +85,11 @@ void App::validateInput() {
         std::string relaxTime = std::string("5");
         std::cout << "\n▣ Timer Started ▣" << std::endl;
         timer.startTimer(time);
-        playSound("/usr/local/share/ptimer/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
 
         std::cout << "\n▣ Relax Time Started ▣" << std::endl;
         timer.startTimer(relaxTime);
-        playSound("/usr/local/share/ptimer/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
     }
 
     if (input == "4" || input == "configure" || input == "configure pomodoro"){
@@ -107,10 +107,10 @@ void App::validateInput() {
         Timer relaxTimer;
         std::cout << "\n▣ Timer Started ▣" << std::endl;
         timer.startTimer(confTime);
-        playSound("/usr/local/share/ptimer/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
         std::cout << "\n▣ Relax Time Started ▣" << std::endl;
         relaxTimer.startTimer(relaxTime);
-        playSound("/usr/local/share/ptimer/sound.wav", 3);
+        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
     }
 
     if (input == "5" || input == "delete" || input == "delete task") {
@@ -163,7 +163,6 @@ void App::playSound(const std::string& path, int seconds) {
 
     std::this_thread::sleep_for(std::chrono::seconds(seconds));
     ma_engine_uninit(&engine);
-
 }
 
 bool App::fileExists(const std::string& path) {
