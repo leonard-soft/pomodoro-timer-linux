@@ -39,7 +39,7 @@ void App::printMenu() {
     std::cout << tab_space << "『     Save Task      』" << std::endl;
     std::cout << tab_space << "『     Task List      』" << std::endl;
     std::cout << tab_space << "『    Start Timer     』" << std::endl;
-    std::cout << tab_space << "『 Configure Pomodoro 』" << std::endl;
+    std::cout << tab_space << "『 Set Timer Duration 』" << std::endl;
     std::cout << tab_space << "『    Delete Task     』" << std::endl;
     std::cout << tab_space << "『        Exit        』" << std::endl;
     std::cout << line;
@@ -48,16 +48,16 @@ void App::printMenu() {
 }
 
 void App::getUserInput() {
-    std::cout << "\n【 Select a option 】 :";
+    std::cout << "\n【 Select an option 】 :";
     std::cin >> input;
     std::transform(input.begin(), input.end(), input.begin() , ::tolower);
 }
 
 void App::validateInput() {
     if (input == "6" || input == "exit") {
-        std::cout << "\n✿❯─────────「✿」───────❮✿" << std::endl;
-        std::cout << "✿ Gracias Por Elegirnos ✿" << std::endl;
-        std::cout << "✿❯─────────「✿」───────❮✿" << std::endl;
+        std::cout << "\n✿❯─────────────「✿」─────────────❮✿" << std::endl;
+        std::cout << "✿ Thank you for using our program! ✿" << std::endl;
+        std::cout << "✿❯─────────────「✿」─────────────❮✿" << std::endl;
         loopState = false;
     }
 
@@ -83,7 +83,7 @@ void App::validateInput() {
         Timer timer;
         std::string time = std::string("20");
         std::string relaxTime = std::string("5");
-        std::cout << "\n▣ Pomodoro Started ▣" << std::endl;
+        std::cout << "\n▣ Timer Started ▣" << std::endl;
         timer.startTimer(time);
         playSound("/usr/local/share/ptimer/sound.wav", 3);
 
@@ -105,7 +105,7 @@ void App::validateInput() {
         
         Timer timer;
         Timer relaxTimer;
-        std::cout << "\n▣ Pomodoro Started ▣" << std::endl;
+        std::cout << "\n▣ Timer Started ▣" << std::endl;
         timer.startTimer(confTime);
         playSound("/usr/local/share/ptimer/sound.wav", 3);
         std::cout << "\n▣ Relax Time Started ▣" << std::endl;
@@ -120,23 +120,22 @@ void App::validateInput() {
             std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
             counter++;
         }
-        std::cout << "\n【 Task Number 】(select a option to delete):";
+        std::cout << "\n【 Task Number 】(Select an option to delete:):";
         std::cin >> taskNumber;
 
         if (taskNumber >= 0 && taskNumber < static_cast<int>(tasks.size())) {
             std::cout << "Removing: " << tasks[taskNumber] << std::endl;
             tasks.erase(tasks.begin() + taskNumber);
         } else {
-            std::cout << "inválid index. the element not exists." << std::endl;
+            std::cout << "Invalid index. The element does not exist." << std::endl;
         }
     }
-
 }
 
 void App::getKeyPress() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-    std::cout << "\nPresione Enter para continuar...";
+    std::cout << "\nPress Enter to continue...";
     std::cin.get();
 }
 
@@ -146,18 +145,18 @@ void App::clearScreen() {
 
 void App::playSound(const std::string& path, int seconds) {
     if (!fileExists(path)) {
-        std::cout << "El archivo no existe: " << path << std::endl;
+        std::cout << "The file does not exist: " << path << std::endl;
         return;
     }
 
     ma_engine engine;
     if (ma_engine_init(NULL, &engine) != MA_SUCCESS) {
-        std::cout << "Error al inicializar el motor de audio.\n";
+        std::cout << "Error initializing the audio engine.\n";
         return;
     }
 
     if (ma_engine_play_sound(&engine, path.c_str(), NULL) != MA_SUCCESS) {
-        std::cout << "Error al reproducir el sonido.\n";
+        std::cout << "Error playing the sound.\n";
         ma_engine_uninit(&engine);
         return;
     }

@@ -10,8 +10,7 @@ private:
     bool loopState = true;
     std::string input;
     std::vector<std::string> tasks;
-
-
+    
 public:
     App();
     void run();

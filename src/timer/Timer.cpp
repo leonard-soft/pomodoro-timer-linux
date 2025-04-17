@@ -25,20 +25,20 @@ int Timer::convertTimeInSeconds(const std::string timeInMinutes) {
 }
 
 std::string Timer::formatTime(int& time) {
-    int minutos = time / 60;
-    int segundos = time % 60;
+    int minutes = time / 60;
+    int seconds = time % 60;
     std::ostringstream ostringStream;
-    ostringStream << std::setfill('0') << std::setw(2) << minutos << ":"
-       << std::setfill('0') << std::setw(2) << segundos;
+    ostringStream << std::setfill('0') << std::setw(2) << minutes << ":"
+       << std::setfill('0') << std::setw(2) << seconds;
     return ostringStream.str();
 }
 
 void Timer::startTimer(const std::string& timeInMinutes) {
-    int tiempoRestante = convertTimeInSeconds(timeInMinutes);
-    while (tiempoRestante > 0) {
-        std::cout << "Tiempo restante: " << formatTime(tiempoRestante) << std::endl;
+    int remainingTime = convertTimeInSeconds(timeInMinutes);
+    while (remainingTime > 0) {
+        std::cout << "remaining time: " << formatTime(remainingTime) << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        tiempoRestante--;
+        remainingTime--;
     }
-    std::cout << "¡Tiempo finalizado!" << std::endl;
+    std::cout << "Time's up!" << std::endl;
 }
