@@ -16,4 +16,9 @@ A simple terminal program for managing your tasks. It includes CRUD functionalit
 ***Installation***
 ```bash 
 git clone https://github.com/leonard-soft/pomodoro-timer-linux.git
+cd pomodoro-timer-linux
+cmake -S . -B build
+cd build
+make
+sudo make install
 ```
