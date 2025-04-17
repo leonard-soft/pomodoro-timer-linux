@@ -22,3 +22,28 @@ cd build
 make
 sudo make install
 ```
+
+From this moment on, you can use the application, you can test it in the terminal with the command ***ptimer***, here is an example
+
+```bash
+  ptimer
+
+// This menu will appear when you run the program.
+
+╭━━━━━━━━━━╯☆●ʚ♡ɞ●☆╰━━━━━━━━━━╮
+        POMODORO TIMER
+
+    『     Save Task      』
+    『     Task List      』
+    『    Start Timer     』
+    『 Set Timer Duration 』
+    『    Delete Task     』
+    『        Exit        』
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+
+【 Select an option 】 :
+```
+<br/>
+
+***user guide***
