@@ -47,3 +47,16 @@ From this moment on, you can use the application, you can test it in the termina
 <br/>
 
 ***user guide***
+
+If you're using the program right now, you're probably looking for instructions on how to use it — and you're right!
+This is the user guide to help you get started.
+
+``` bash
+【 Select an option 】 : 1 // if your chooise is 1
+
+【 Task Name 】: update the repository
+
+Press Enter to continue...
+```
+![image](https://github.com/user-attachments/assets/d9576b59-b9e9-4092-bdd5-0530dc077ef9)
+
