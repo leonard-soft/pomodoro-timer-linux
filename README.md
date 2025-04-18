@@ -91,6 +91,23 @@ remaining time: 19:56
 ```
 ![image](https://github.com/user-attachments/assets/1e0e0949-c8e6-479a-843f-e541251c5a1c)
 
+<br/>
+
+```bash
+  【 Select an option 】 : 4 // If your choice is 4
+
+【 Time 】:1
+
+【 Relax Time 】:1
+
+▣ Timer Started ▣
+remaining time: 01:00
+remaining time: 00:59
+remaining time: 00:58
+remaining time: 00:57
+...
+```
+![image](https://github.com/user-attachments/assets/e2b55a21-cfca-446c-a781-9a7afdcd2726)
 
 ------
 
