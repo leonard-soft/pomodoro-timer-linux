@@ -1,25 +1,129 @@
+// app.hpp
 #pragma once
 
-#include <string>
-#include <vector>
+#include <string> // Standard C++ librarie for managing strings objects.
+#include <vector> // Standard C++ librarie for managing dynamic Arrays.
 
-#include "../../libs/include/miniaudio.h"
+#include "../../libs/include/miniaudio.h" // Small C librarie for managing the audio system.
 
+/**
+ * @brief App class to execute and manage the main functionalities of the program.
+ * 
+ *  This class handles all the functions of the program. The main function is to run the project, 
+ *  but it also contains other important functions to initialize the app in your terminal 
+ *  environment.
+ */
 class App {
-private:
-    bool loopState = true;
-    std::string input;
-    std::vector<std::string> tasks;
-    
 public:
+
+    /**
+     *  @brief Construct a new App object
+     * 
+     *  Creates an instance of the App class.
+     */
     App();
+
+    /**
+    *  @brief Runs the main application loop, handling the menu, user choices, tasks, and timer.
+    *
+    *  Activates the main application loop, displays the menu, and prompts the user to select an option.
+    *  If the user's choice is valid, the system will execute the corresponding functionality.
+    *  After completion, the loop restarts and waits for the next input.
+    */
     void run();
+
+    /**
+    *  @brief This function displays a menu.
+    * 
+    *  The sole purpose of this function is to present the menu.
+    *  It does not perform any additional operations or interactions.
+    */
     void printMenu();
+
+    /**
+    *  @brief Gets user input using standard input (std::cin).
+    * 
+    *  This function retrieves input directly from the user through the console.
+    */
     void getUserInput();
+
+    /**
+    * @brief Validates user input.
+    * 
+    * This function checks the user-provided input to ensure it meets the required criteria.
+    * It should handle cases of invalid or unexpected input and provide feedback or corrections 
+    * accordingly.
+    */
     void validateInput();
+
+    /**
+    * @brief Detects and retrieves key press events.
+    * 
+    * This function captures a key press from the user, allowing further processing
+    * or actions based on the input. Ensure appropriate handling of key press events 
+    * for different scenarios or inputs.
+    */
     void getKeyPress();
+
+    /**
+    * @brief Clears the console screen.
+    * 
+    * This function resets the console display by removing any previous output.
+    * It is typically used to enhance user experience by starting with a clean slate.
+    * Implementation may vary depending on the operating system 
+    * (e.g., using system("cls") for Windows or system("clear") for Unix-based systems).
+    */
     void clearScreen();
+
+    /**
+    * @brief Plays a sound file for a specified duration.
+    * 
+    * @param path The file path of the sound to be played.
+    * @param seconds The duration (in seconds) for which the sound will be played.
+    * 
+    * Ensure the provided file path is valid and accessible. 
+    * The implementation may depend on external libraries or platform-specific audio 
+    * APIs for handling sound playback.
+    */
     void playSound(const std::string& path, int seconds);
 
+    /**
+    * @brief Checks if a file exists at the specified path.
+    * 
+    * @param path The file path to be checked.
+    * @return true If the file exists at the given path.
+    * @return false If the file does not exist at the given path.
+    * 
+    * This function ensures that the specified file path is valid and accessible.
+    * Consider handling potential exceptions or errors based on the operating system 
+    * and file system permissions.
+    */
     bool fileExists(const std::string& path);
+
+private:
+
+    /**
+    * @brief Indicates the state of a loop.
+    * 
+    * The `loopState` variable is used to control the execution flow of a loop.
+    * Set to `true` by default, it can be toggled to terminate the loop when needed.
+    */
+    bool loopState = true;
+
+    /**
+    * @brief Stores user input.
+    * 
+    * The `input` variable holds user-provided data, typically obtained through console input 
+    * or other input mechanisms. Ensure proper validation or processing of the data when utilized.
+    */
+    std::string input;
+
+    /**
+    * @brief Maintains a list of tasks.
+    * 
+    * The `tasks` vector contains a collection of strings representing tasks.
+    * It supports operations such as adding, removing, and iterating over tasks.
+    * Useful for applications requiring task management or organization.
+    */
+    std::vector<std::string> tasks;
 };
