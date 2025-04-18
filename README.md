@@ -56,7 +56,7 @@ If you're using the program right now, you're probably looking for instructions 
 This is the user guide to help you get started.
 
 ``` bash
-【 Select an option 】 : 1 // if your chooise is 1
+【 Select an option 】 : 1 // If your choice is 1
 
 【 Task Name 】: update the repository
 
@@ -67,7 +67,7 @@ Press Enter to continue...
 <br/>
 
 ```bash 
-  【 Select an option 】 : 2 // if your chooise is 2
+  【 Select an option 】 : 2 // If your choice is 2
 
   0 〘 update the repository 〙
   1 〘 other task 〙
@@ -75,6 +75,22 @@ Press Enter to continue...
   Press Enter to continue...
 ```
 ![image](https://github.com/user-attachments/assets/27356ee3-5ddd-4470-9084-b5a1d0763053)
+
+<br/>
+
+```bash 
+【 Select an option 】 : 3 // If your choice is 3
+
+▣ Timer Started ▣
+remaining time: 20:00
+remaining time: 19:59
+remaining time: 19:58
+remaining time: 19:57
+remaining time: 19:56
+...
+```
+![image](https://github.com/user-attachments/assets/1e0e0949-c8e6-479a-843f-e541251c5a1c)
+
 
 ------
 
