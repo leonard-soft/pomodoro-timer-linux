@@ -13,6 +13,8 @@ A simple terminal program for managing your tasks. It includes CRUD functionalit
 
 <br/>
 
+--------
+
 ***Installation***
 ```bash 
 git clone https://github.com/leonard-soft/pomodoro-timer-linux.git
@@ -46,6 +48,8 @@ From this moment on, you can use the application, you can test it in the termina
 ```
 <br/>
 
+-----
+
 ***user guide***
 
 If you're using the program right now, you're probably looking for instructions on how to use it — and you're right!
@@ -59,4 +63,11 @@ This is the user guide to help you get started.
 Press Enter to continue...
 ```
 ![image](https://github.com/user-attachments/assets/d9576b59-b9e9-4092-bdd5-0530dc077ef9)
+
+------
+
+***About the Author***
+
+Developed by Leonard Soft — passionate about creating efficient and simple open-source tools for GNU/Linux environments.
+If you like this project or have suggestions, feel free to open an issue or fork it!
 
