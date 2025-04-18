@@ -1,25 +1,36 @@
-#include "app.hpp"
+// App.cpp
+#include "app.hpp" // App header implementation.
 
-#include <cctype>
-#include <cstdio>
-#include <ios>
-#include <iostream>
-#include <limits>
-#include <ostream>
-#include <cstdlib>
-#include <algorithm>
-#include <string>
-#include <fstream>
-#include <thread>
-#include <chrono>
+#include <cctype>  // C++ librarie for managing character classification and conversion.
+#include <cstdio>  // C++ librarie for managing input/output operations at the C level.
+#include <ios>     // C++ librarie for managing input/output stream formatting and flags.
+#include <iostream> // C++ librarie for managing input/output stream operations.
+#include <limits>  // C++ librarie for managing numeric limits and characteristics.
+#include <ostream> // C++ librarie for managing output stream operations.
+#include <cstdlib> // C++ librarie for utilities for memory, random numbers, and environment.
+#include <algorithm> // C++ librerie for algorithms like sorting and searching.
+#include <string> // C++ librarie for string manipulation utilities.
+#include <fstream> // C++ librarie for file input/output operations
+#include <thread> // C++ librarie for multithreading support
+#include <chrono> // C++ librarie for time handling utilities
 
-#include "../separators/separators.hpp"
-#include "../timer/timer.hpp"
-#include "../../libs/include/miniaudio.h"
+#include "../separators/separators.hpp" // Header for separator-related utilities
+#include "../timer/timer.hpp" // Header for timer functionalities.
+#include "../../libs/include/miniaudio.h" // Library for audio processing.
 
+/**
+ * @brief Default constructor for the App class.
+ * 
+ * Initializes an App object with default settings or values.
+ */
+App::App() = default; 
 
-App::App() = default;
-
+/**
+ * @brief Executes the main application loop.
+ * 
+ * Continuously runs the application while the loopState is true.
+ * Handles screen clearing, menu display, user input, validation, and key press detection.
+ */
 void App::run() {
     clearScreen();
     while (loopState) {
@@ -31,11 +42,16 @@ void App::run() {
     }
 }
 
+/**
+ * @brief Displays the Pomodoro Timer menu.
+ * 
+ * Prints a menu with options for saving tasks, viewing the task list, starting the timer,
+ * setting the timer duration, deleting tasks, and exiting the application.
+ */
 void App::printMenu() {
     std::cout << separator_bar << std::endl;
     std::cout << tab_space << tab_space << "POMODORO TIMER" << std::endl;
     std::cout << line;
-
     std::cout << tab_space << "『     Save Task      』" << std::endl;
     std::cout << tab_space << "『     Task List      』" << std::endl;
     std::cout << tab_space << "『    Start Timer     』" << std::endl;
@@ -43,22 +59,28 @@ void App::printMenu() {
     std::cout << tab_space << "『    Delete Task     』" << std::endl;
     std::cout << tab_space << "『        Exit        』" << std::endl;
     std::cout << line;
-
     std::cout << separator_footer << std::endl;
 }
 
+/**
+ * @brief Retrieves and processes user input.
+ * 
+ * Prompts the user to select an option and captures the input via standard input (std::cin).
+ * The input is transformed to lowercase for uniform handling and comparison purposes.
+ */
 void App::getUserInput() {
     std::cout << "\n【 Select an option 】 :";
     std::cin >> input;
     std::transform(input.begin(), input.end(), input.begin() , ::tolower);
 }
 
+/**
+ * @brief 
+ * 
+ */
 void App::validateInput() {
     if (input == "6" || input == "exit") {
-        std::cout << "\n✿❯─────────────「✿」─────────────❮✿" << std::endl;
-        std::cout << "✿ Thank you for using our program! ✿" << std::endl;
-        std::cout << "✿❯─────────────「✿」─────────────❮✿" << std::endl;
-        loopState = false;
+        exit();
     }
 
     if (input == "1" || input == "save task" || input == "save") {
@@ -132,6 +154,10 @@ void App::validateInput() {
     }
 }
 
+/**
+ * @brief 
+ * 
+ */
 void App::getKeyPress() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
@@ -139,10 +165,20 @@ void App::getKeyPress() {
     std::cin.get();
 }
 
+/**
+ * @brief 
+ * 
+ */
 void App::clearScreen() {
     std::system("clear");
 }
 
+/**
+ * @brief 
+ * 
+ * @param path 
+ * @param seconds 
+ */
 void App::playSound(const std::string& path, int seconds) {
     if (!fileExists(path)) {
         std::cout << "The file does not exist: " << path << std::endl;
@@ -165,6 +201,26 @@ void App::playSound(const std::string& path, int seconds) {
     ma_engine_uninit(&engine);
 }
 
+/**
+ * @brief Handles program termination gracefully.
+ * 
+ * Displays a farewell message and decorative separators to enhance user experience.
+ * Sets the loop state to false, effectively stopping the application loop and exiting the program.
+ */
+void App::exit() {
+    std::cout << "\n✿❯─────────────「✿」─────────────❮✿" << std::endl;
+    std::cout << "✿ Thank you for using our program! ✿" << std::endl;
+    std::cout << "✿❯─────────────「✿」─────────────❮✿" << std::endl;
+    loopState = false;
+}
+
+/**
+ * @brief 
+ * 
+ * @param path 
+ * @return true 
+ * @return false 
+ */
 bool App::fileExists(const std::string& path) {
     std::ifstream file(path);
     return file.good();

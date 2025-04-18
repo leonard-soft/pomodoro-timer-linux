@@ -1,8 +1,8 @@
 // app.hpp
 #pragma once
 
-#include <string> // Standard C++ librarie for managing strings objects.
-#include <vector> // Standard C++ librarie for managing dynamic Arrays.
+#include <string> // C++ librarie for managing strings objects.
+#include <vector> // C++ librarie for managing dynamic Arrays.
 
 #include "../../libs/include/miniaudio.h" // Small C librarie for managing the audio system.
 
@@ -86,6 +86,13 @@ public:
     * APIs for handling sound playback.
     */
     void playSound(const std::string& path, int seconds);
+
+    /**
+    * @brief Terminates the program and exits gracefully.
+    * 
+    * Ensures a smooth and user-friendly shutdown process for the application.
+    */
+    void exit();
 
     /**
     * @brief Checks if a file exists at the specified path.
