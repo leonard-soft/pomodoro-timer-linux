@@ -109,6 +109,22 @@ remaining time: 00:57
 ```
 ![image](https://github.com/user-attachments/assets/e2b55a21-cfca-446c-a781-9a7afdcd2726)
 
+<br/>
+
+```bash
+【 Select an option 】 : 5 // If your choice is five
+0 〘 task 〙
+1 〘 another task  〙
+
+【 Task Number 】(Select an option to delete:): 1
+
+```
+![image](https://github.com/user-attachments/assets/8d07683e-4dd3-48b9-a492-20a7cd085b50)
+
+
+📝 Note: Before deleting a task, make sure there are tasks available in the list.
+If the list is empty, there’s nothing to delete!
+
 ------
 
 ***About the Author***
