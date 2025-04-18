@@ -97,6 +97,17 @@ public:
     void saveTask();
 
     /**
+    * @brief Displays the list of tasks stored in memory.
+    * 
+    * This function iterates through the `tasks` vector and prints each task
+    * to the console, providing a clear view of all tasks entered by the user.
+    * If the task list is empty, the function informs the user accordingly to
+    * ensure clarity and prevent confusion. This functionality helps the user
+    * review their tasks efficiently.
+    */
+    void showTaskList();
+
+    /**
     * @brief Terminates the program and exits gracefully.
     * 
     * Ensures a smooth and user-friendly shutdown process for the application.

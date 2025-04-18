@@ -88,12 +88,7 @@ void App::validateInput() {
     }
 
     if (input == "2" || input == "task list" || input == "list") {
-        int counter = 0;
-        std::cout << line;
-        for (std::string& task : tasks) {
-            std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
-            counter++;
-        }
+        showTaskList();
     }
 
     if (input == "3" || input == "start" || input == "start pomoodoro") {
@@ -227,6 +222,21 @@ void App::saveTask() {
     tasks.push_back(task);
 }
 
+/**
+ * @brief Displays the list of tasks with numbering for easy identification.
+ * 
+ * This function prints each task stored in the `tasks` vector to the console, 
+ * preceded by a numerical index for better organization. It iterates through 
+ * the vector, ensuring each task is formatted consistently.
+ */
+void App::showTaskList() {
+    int counter = 0;
+    std::cout << line;
+    for (std::string& task : tasks) {
+        std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
+        counter++;
+    }
+}
 
 /**
  * @brief Handles program termination gracefully.
