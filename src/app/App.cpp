@@ -92,16 +92,7 @@ void App::validateInput() {
     }
 
     if (input == "3" || input == "start" || input == "start pomoodoro") {
-        Timer timer;
-        std::string time = std::string("20");
-        std::string relaxTime = std::string("5");
-        std::cout << "\n▣ Timer Started ▣" << std::endl;
-        timer.startTimer(time);
-        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
-
-        std::cout << "\n▣ Relax Time Started ▣" << std::endl;
-        timer.startTimer(relaxTime);
-        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+       startTimer();
     }
 
     if (input == "4" || input == "configure" || input == "configure pomodoro"){
@@ -236,6 +227,27 @@ void App::showTaskList() {
         std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
         counter++;
     }
+}
+
+/**
+ * @brief Manages a work timer followed by a relaxation timer with sound notifications.
+ * 
+ * This function starts two timers sequentially: one for a work period and another for a
+ * relaxation period. It uses the `Timer` class to manage the durations, defined as strings
+ * representing seconds. Upon the completion of each timer, a sound notification is played
+ * using the `playSound` function to signal the transition. 
+ */
+void App::startTimer() {
+    Timer timer;
+    std::string time = std::string("20");
+    std::string relaxTime = std::string("5");
+    std::cout << "\n▣ Timer Started ▣" << std::endl;
+    timer.startTimer(time);
+    playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+
+    std::cout << "\n▣ Relax Time Started ▣" << std::endl;
+    timer.startTimer(relaxTime);
+    playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
 }
 
 /**

@@ -107,6 +107,16 @@ public:
     */
     void showTaskList();
 
+   /**
+   * @brief Starts a timer to track elapsed time.
+   * 
+   * This function initializes and begins a timer, which can be used to measure
+   * a specific duration or track how much time has passed. The implementation
+   * could involve pausing program execution for a specified time or triggering
+   * actions after the timer completes.
+   */
+    void startTimer();
+
     /**
     * @brief Terminates the program and exits gracefully.
     * 
