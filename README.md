@@ -64,6 +64,18 @@ Press Enter to continue...
 ```
 ![image](https://github.com/user-attachments/assets/d9576b59-b9e9-4092-bdd5-0530dc077ef9)
 
+<br/>
+
+```bash 
+  【 Select an option 】 : 2 // if your chooise is 2
+
+  0 〘 update the repository 〙
+  1 〘 other task 〙
+
+  Press Enter to continue...
+```
+![image](https://github.com/user-attachments/assets/27356ee3-5ddd-4470-9084-b5a1d0763053)
+
 ------
 
 ***About the Author***
