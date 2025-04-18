@@ -125,6 +125,23 @@ remaining time: 00:57
 📝 Note: Before deleting a task, make sure there are tasks available in the list.
 If the list is empty, there’s nothing to delete!
 
+<br/>
+
+```bash
+【 Select an option 】 : 6 // If your choice is 6
+
+✿❯─────────────「✿」─────────────❮✿
+✿ Thank you for using our program! ✿
+✿❯─────────────「✿」─────────────❮✿
+
+Press Enter to continue...
+
+```
+![image](https://github.com/user-attachments/assets/4c97b103-2fc0-47f8-a8e5-965f7187fade)
+
+
+If you select 6, the program will exit gracefully, thanking you for using it.
+
 ------
 
 ***About the Author***
