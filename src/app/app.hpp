@@ -86,6 +86,15 @@ public:
     * APIs for handling sound playback.
     */
     void playSound(const std::string& path, int seconds);
+    
+   /**
+   * @brief Saves the current task to an in-memory container.
+   * 
+   * This function adds the current task to a std::vector that acts as an 
+   * in-memory storage for tasks. The vector ensures that tasks are stored 
+   * sequentially and can be accessed or modified later. 
+   */
+    void saveTask();
 
     /**
     * @brief Terminates the program and exits gracefully.
