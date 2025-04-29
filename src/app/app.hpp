@@ -127,6 +127,15 @@ public:
     void setTime();
 
     /**
+     * @brief delete a task of the vector, ask for a choice and delete the task.
+     * 
+     * Use the `std::vector<Task>` for search the element using the index. If the index is 
+     * valid, the method will remove the task from the vector, but, if not exists, the method
+     * will not delete nothing. 
+     */
+    void deleteTask();
+
+    /**
     * @brief Terminates the program and exits gracefully.
     * 
     * Ensures a smooth and user-friendly shutdown process for the application.

@@ -75,8 +75,10 @@ void App::getUserInput() {
 }
 
 /**
- * @brief 
+ * @brief Validates user input and executes the corresponding action.
  * 
+ * Maps various input commands (numbers and keywords) to specific application functions
+ * like saving tasks, listing tasks, starting the timer, configuring settings, deleting tasks, or exiting.
  */
 void App::validateInput() {
     if (input == "6" || input == "exit") {
@@ -100,21 +102,7 @@ void App::validateInput() {
     }
 
     if (input == "5" || input == "delete" || input == "delete task") {
-        int counter = 0;
-        int taskNumber;
-        for (std::string& task : tasks) {
-            std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
-            counter++;
-        }
-        std::cout << "\n【 Task Number 】(Select an option to delete):";
-        std::cin >> taskNumber;
-
-        if (taskNumber >= 0 && taskNumber < static_cast<int>(tasks.size())) {
-            std::cout << "Removing: " << tasks[taskNumber] << std::endl;
-            tasks.erase(tasks.begin() + taskNumber);
-        } else {
-            std::cout << "Invalid index. The element does not exist." << std::endl;
-        }
+        deleteTask();
     }
 }
 
@@ -259,6 +247,31 @@ void App::setTime() {
     std::cout << "\n▣ Relax Time Started ▣" << std::endl;
     relaxTimer.startTimer(relaxTime);
     playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+}
+
+/**
+ * @brief Displays the list of tasks with indices and allows the user to delete a selected task.
+ * 
+ * Prompts the user to select a task by its number. If the input is valid,
+ * the corresponding task is removed from the list. Otherwise, an error message is shown.
+ */
+void App::deleteTask() {
+    int counter = 0;
+    int taskNumber;
+    std::cout << line;
+    for (std::string& task : tasks) {
+        std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
+        counter++;
+    }
+    std::cout << "\n【 Task Number 】(Select an option to delete):";
+    std::cin >> taskNumber;
+
+    if (taskNumber >= 0 && taskNumber < static_cast<int>(tasks.size())) {
+        std::cout << "Removing: " << tasks[taskNumber] << std::endl;
+        tasks.erase(tasks.begin() + taskNumber);
+    } else {
+        std::cout << "Invalid index. The element does not exist." << std::endl;
+    }
 }
 
 /**
