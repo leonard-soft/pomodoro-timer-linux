@@ -233,6 +233,13 @@ void App::startTimer() {
     playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
 }
 
+/**
+ * @brief Ask the time to configure the timer duration.
+ * 
+ * Ask for the time duration with the `std::getline()` to save an exact data of
+ * the user preference, this value is used to initialize the timer with the `Timer` object
+ * that has the `startTimer()` method, this method initialize the timer. 
+ */
 void App::setTime() {
     std::string confTime;
     std::string relaxTime;
