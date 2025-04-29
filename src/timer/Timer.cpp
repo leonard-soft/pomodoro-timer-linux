@@ -6,9 +6,21 @@
 #include <thread>
 #include <iomanip>
 
-
+/**
+ * @brief Default constructor for Timer. Initializes time to 0.
+ */
 Timer::Timer() = default;
 
+/**
+ * @brief Converts a time string to total seconds.
+ * 
+ * Accepts input in two formats:
+ * - "MM" → returns minutes * 60
+ * - "MM:SS" → returns (minutes * 60) + seconds
+ * 
+ * @param timeInMinutes A string representing time (e.g., "25" or "5:30").
+ * @return Time in seconds.
+ */
 int Timer::convertTimeInSeconds(const std::string timeInMinutes) {
     int minutes = 0, seconds = 0;
     char separator;
@@ -24,6 +36,12 @@ int Timer::convertTimeInSeconds(const std::string timeInMinutes) {
     return 0;
 }
 
+/**
+ * @brief Formats seconds into MM:SS format.
+ * 
+ * @param time Time in seconds (passed by reference).
+ * @return A string formatted as "MM:SS".
+ */
 std::string Timer::formatTime(int& time) {
     int minutes = time / 60;
     int seconds = time % 60;
@@ -33,6 +51,13 @@ std::string Timer::formatTime(int& time) {
     return ostringStream.str();
 }
 
+/**
+ * @brief Starts a countdown timer using the given time string.
+ * 
+ * Prints remaining time every second until it reaches 0.
+ * 
+ * @param timeInMinutes Time string in "MM" or "MM:SS" format.
+ */
 void Timer::startTimer(const std::string& timeInMinutes) {
     int remainingTime = convertTimeInSeconds(timeInMinutes);
     while (remainingTime > 0) {
