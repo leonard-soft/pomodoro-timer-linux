@@ -118,6 +118,15 @@ public:
     void startTimer();
 
     /**
+     * @brief Set time in seconds to personalize the timer.
+     * 
+     * Use the timer object to configure the duration of the pomodoro, in this case
+     * the user set the time in minutes and the function use the start_timer method 
+     * to initialize the timer.
+     */
+    void setTime();
+
+    /**
     * @brief Terminates the program and exits gracefully.
     * 
     * Ensures a smooth and user-friendly shutdown process for the application.

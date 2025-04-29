@@ -96,24 +96,7 @@ void App::validateInput() {
     }
 
     if (input == "4" || input == "configure" || input == "configure pomodoro"){
-        std::string confTime;
-        std::string relaxTime;
-        std::cout << "\n【 Time 】:";
-        std::cin >> confTime;
-
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "\n【 Relax Time 】:";
-        std::cin >> relaxTime;
-        
-        Timer timer;
-        Timer relaxTimer;
-        std::cout << "\n▣ Timer Started ▣" << std::endl;
-        timer.startTimer(confTime);
-        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
-        std::cout << "\n▣ Relax Time Started ▣" << std::endl;
-        relaxTimer.startTimer(relaxTime);
-        playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+        setTime();
     }
 
     if (input == "5" || input == "delete" || input == "delete task") {
@@ -123,7 +106,7 @@ void App::validateInput() {
             std::cout << counter << " 〘 " << task << " 〙" << std::endl; 
             counter++;
         }
-        std::cout << "\n【 Task Number 】(Select an option to delete:):";
+        std::cout << "\n【 Task Number 】(Select an option to delete):";
         std::cin >> taskNumber;
 
         if (taskNumber >= 0 && taskNumber < static_cast<int>(tasks.size())) {
@@ -247,6 +230,27 @@ void App::startTimer() {
 
     std::cout << "\n▣ Relax Time Started ▣" << std::endl;
     timer.startTimer(relaxTime);
+    playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+}
+
+void App::setTime() {
+    std::string confTime;
+    std::string relaxTime;
+    std::cout << "\n【 Time 】:";
+    std::cin >> confTime;
+
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "\n【 Relax Time 】:";
+    std::cin >> relaxTime;
+        
+    Timer timer;
+    Timer relaxTimer;
+    std::cout << "\n▣ Timer Started ▣" << std::endl;
+    timer.startTimer(confTime);
+    playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
+    std::cout << "\n▣ Relax Time Started ▣" << std::endl;
+    relaxTimer.startTimer(relaxTime);
     playSound("/usr/local/share/ptimer/assets/sound.wav", 3);
 }
 
